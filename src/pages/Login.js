@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./Login.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { login } from '../store/actions/authActions';
 
 function Login(){
 
@@ -9,6 +11,7 @@ const [email,setEmail] = useState("");
 const [password,setPassword] = useState("");
 const [role,setRole] = useState("user");
 const navigate = useNavigate();
+const dispatch = useDispatch();
 
 const handleRegister = async (e) => {
 
@@ -22,6 +25,7 @@ password,
 role
 });
 
+dispatch(login(email, role));
 alert("Login Successfully");
 navigate("/dashboard");
 
