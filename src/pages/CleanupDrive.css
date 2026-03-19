@@ -1,0 +1,39 @@
+.drive-container{
+padding:40px;
+text-align:center;
+background:#f4f9f6;
+min-height:100vh;
+}
+
+.drive-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.drive-card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 6px 15px rgba(0,0,0,0.15);
+}
+
+.drive-card h3{
+color:#0b5d3b;
+margin-bottom:10px;
+}
+
+.drive-card button{
+margin-top:10px;
+padding:10px 15px;
+background:#2e8b57;
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+}
+
+.drive-card button:hover{
+background:#256f47;
+}
