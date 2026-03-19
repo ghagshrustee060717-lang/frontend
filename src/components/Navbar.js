@@ -5,7 +5,7 @@ import { logout } from '../store/actions/authActions';
 import "./Navbar.css";
 
 function Navbar() {
-  const { isLoggedIn } = useSelector(state => state.auth);
+  const { isLoggedIn, role } = useSelector(state => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -29,7 +29,9 @@ function Navbar() {
         ) : (
           <button onClick={handleLogout} className="nav-btn logout-btn">Logout</button>
         )}
-        <Link to="/calculator" className="nav-btn">Calculator</Link>
+        {isLoggedIn && role === 'user' && (
+          <Link to="/calculator" className="nav-btn">Calculator</Link>
+        )}
         <Link to="/challenges" className="nav-btn">Challenges</Link>
         <Link to="/CleanupDrive" className="nav-btn">CleanupDrive</Link>
       </div>
