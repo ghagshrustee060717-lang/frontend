@@ -1,12 +1,14 @@
 import axios from 'axios';
 import React from 'react'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ScheduleDrive = () => {
     const [title,setTitle] = useState("");
     const [date,setDate] = useState("");
     const [time,setTime] = useState("");
 
+    const navigate = useNavigate();
     const handleSchedule = async (e) => {
 
 e.preventDefault();
@@ -20,6 +22,7 @@ time
 });
 
 alert("Drive scheduled Successfully");
+navigate("/CleanupDrive");
 
 }catch(error){
 
